@@ -1,6 +1,5 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 
-import { RootState } from "../store";
 import { AsyncState } from "../../utils/constant";
 import { LocationType } from "../../utils/types";
 import { locations } from "../../utils/data";
@@ -61,7 +60,5 @@ export const fetchAddressesSlice = createSlice({
       });
   },
 });
-
-export const locationsStore = (state: RootState) => state.locations;
 
 export default fetchAddressesSlice.reducer;

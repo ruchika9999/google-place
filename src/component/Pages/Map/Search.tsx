@@ -3,7 +3,7 @@ import { Input, List, Spin } from "antd";
 import { LoadingOutlined } from "@ant-design/icons";
 
 import { useAppDispatch, useAppSelector } from "../../../store/hooks";
-import { fetchLocations, locationsStore } from "../../../store/map/fetchSlice";
+import { fetchLocations } from "../../../store/map/fetchSlice";
 import { addLocation } from "../../../store/map/mapSlice";
 import { AsyncState, debounce } from "../../../utils/constant";
 
@@ -14,7 +14,7 @@ const Search = React.memo(() => {
     dispatch(fetchLocations(value));
   }, 1000);
 
-  const mapLocations = useAppSelector(locationsStore);
+  const mapLocations = useAppSelector((state) => state.locations);
 
   return (
     <div className="search-box">

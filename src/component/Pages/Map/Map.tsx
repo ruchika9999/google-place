@@ -5,11 +5,9 @@ import {
   LoadScript,
   Marker,
 } from "@react-google-maps/api";
-
 import MainLayout from "../../Layout/Main";
 import Search from "./Search";
 import { useAppSelector } from "../../../store/hooks";
-import { mapLocationsStore } from "../../../store/map/mapSlice";
 import { GOOGLE_API_KEY } from "../../../utils/constant";
 
 const center = {
@@ -19,7 +17,7 @@ const center = {
 
 const MapComponent = () => {
   const [activeInfoWindow, setActiveInfoWindow] = useState(0);
-  const locations = useAppSelector(mapLocationsStore);
+  const locations = useAppSelector((state) => state.mapLocations);
 
   return (
     <MainLayout

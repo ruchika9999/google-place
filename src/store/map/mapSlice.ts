@@ -1,6 +1,5 @@
 import { PayloadAction, createSlice } from "@reduxjs/toolkit";
 
-import { RootState } from "../store";
 import { AsyncState } from "../../utils/constant";
 import { LocationType } from "../../utils/types";
 
@@ -24,7 +23,6 @@ export const mapLocations = createSlice({
   },
 });
 
-export const mapLocationsStore = (state: RootState) => state.mapLocations;
 
 export const { addLocation } = mapLocations.actions;
 
