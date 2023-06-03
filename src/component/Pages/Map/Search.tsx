@@ -5,7 +5,8 @@ import { LoadingOutlined } from "@ant-design/icons";
 import { useAppDispatch, useAppSelector } from "../../../store/hooks";
 import { fetchLocations } from "../../../store/map/fetchSlice";
 import { addLocation } from "../../../store/map/mapSlice";
-import { AsyncState, debounce } from "../../../utils/constant";
+import { AsyncState } from "../../../utils/constant";
+import { debounce } from "../../../utils/helpers";
 
 const Search = React.memo(() => {
   const dispatch = useAppDispatch();
@@ -33,9 +34,9 @@ const Search = React.memo(() => {
           )}
       </div>
 
-      {mapLocations.data.map((location) => (
+      {mapLocations.data.map((location, index) => (
         <List.Item
-          key={location.label.text}
+          key={index}
           className="list-item"
           onClick={() => {
             dispatch(addLocation(location));
